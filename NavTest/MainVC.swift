@@ -74,17 +74,13 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             return self.toolBar!
         }
         
-        let seg = UISegmentedControl(items: ["3天", "7天", "2周", "5周"])
+        let seg = UISegmentedControl(items: ["1D", "7D", "2W", "5W"])
         seg.selectedSegmentIndex = 0
         let item = UIBarButtonItem(customView: seg)
         
-        let seg2 = UISegmentedControl(items: ["天","次数"])
-        seg2.selectedSegmentIndex = 0
-        let item2 = UIBarButtonItem(customView: seg2)
-
         let bar = UIToolbar()
         bar.setShadowImage(UIImage(), forToolbarPosition: .any)
-        bar.items = [item, item2]
+        bar.items = [item]
         bar.barTintColor = UIColor(white: 1, alpha: 1)
         
         let shadow = UIView(frame: CGRect(x: 0, y: DTProgressNavigationBar.height-0.33, width: UIScreen.main.bounds.width, height: 0.33))
